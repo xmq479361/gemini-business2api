@@ -77,16 +77,16 @@ echo ""
 
 # Step 3: Pull latest code from git
 print_step "Step 3: Syncing code from repository..."
-print_info "Fetching latest changes..."
-git fetch origin
+#print_info "Fetching latest changes..."
+#git fetch origin
 
-print_info "Pulling latest code..."
-if git pull origin main 2>/dev/null || git pull origin master 2>/dev/null; then
-    print_success "Code synchronized successfully"
-else
-    print_info "No remote changes to pull"
-fi
-echo ""
+#print_info "Pulling latest code..."
+#if git pull origin main 2>/dev/null || git pull origin master 2>/dev/null; then
+#    print_success "Code synchronized successfully"
+#else
+print_info "No remote changes to pull"
+#fi
+#echo ""
 
 # Step 4: Setup .env file if it doesn't exist
 print_step "Step 4: Checking configuration..."
@@ -94,8 +94,8 @@ if [ -f ".env" ]; then
     print_info ".env file exists"
 else
     if [ -f ".env.example" ]; then
-        cp .env.example .env
-        print_success ".env file created from .env.example"
+        #cp .env.example .env
+        #print_success ".env file created from .env.example"
         print_info "Please edit .env and configure your ADMIN_KEY"
     else
         print_error ".env.example not found"
